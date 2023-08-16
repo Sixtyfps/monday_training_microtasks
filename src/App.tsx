@@ -1,20 +1,23 @@
 import React from 'react';
 import './App.css';
-import {Todolist} from "./Todolist";
-import {NewComponent} from "./NewComponent";
+import {Button} from "./components/Button";
 
 function App() {
+    const ButtonFoo =(name:string, age:number)=>{
+        console.log(name, age)
+    }
 
-
-    const topCars = [
-        {manufacturer:'BMW', model:'m5cs'},
-        {manufacturer:'Mercedes', model:'e63s'},
-        {manufacturer:'Audi', model:'rs6'}
-    ];
+    const ButtonFooSt =()=>{
+        console.log("stupid button")
+    }
 
     return (
         <div className="App">
-            <NewComponent cars={topCars}/>
+            {/*<button>MyYouTubeChannel-1</button>*/}
+            {/*<button>MyYouTubeChannel-2</button>*/}
+            <Button name={'MyYouTubeChannel-1'} callBack={()=>ButtonFoo('Ivan', 30)}/>
+            <Button name={'MyYouTubeChannel-2'} callBack={()=>ButtonFoo('Vasya', 43)}/>
+            <Button name={'stupid button'} callBack={ButtonFooSt}/>
         </div>
     );
 }
